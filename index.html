@@ -4,31 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="ai, data, programming, software" />
     <title>Lychee Technology Inc.</title>
 
     <head>
         <style>
-            .center {
+            .main-div {
                 margin: auto;
-                width: 1024px;
-                background-color: #052146;
-            }
-
-            .box {
+                max-width: 1024px;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
                 justify-content: center;
             }
+
+            .logo-img {
+                max-width: 100%;
+                height: auto;
+                margin: 8pt;
+            }
+
+            .body-bg {
+                background-color: #052146;
+            }
+
+            .contact-us {
+                margin: 8pt;
+                color: white;
+                font-weight: bolder;
+            }
         </style>
     </head>
 </head>
 
-<body style="background-color: #052146;">
-    <div class="center box">
-        <img src="img/logo_1024.jpeg" />
-        <a href="mailto:info@lychee.technology" style="color: white; font-weight: bolder;">Contact Us</a>
+<body class="body-bg">
+    <div class="main-div">
+        <img class="logo-img" src="img/logo_1024.jpeg">
+        <a href="mailto:info@lychee.technology" class="contact-us">Contact Us</a>
     </div>
 </body>
+
 </html>
