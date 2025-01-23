@@ -6,46 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lychee Technology Inc.</title>
 
-    <head>
-        <style>
-            .main-div {
-                margin: auto;
-                max-width: 1024px;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-                background-image: url("img/logo_1024.jpeg");
-                background-repeat: no-repeat;
-                background-size: contain;
-                height: 95vh;
-            }
-            .body-bg {
-                background-color: #052146;
-            }
-            .font-big {
-                font-size: 16pt;
-            }
-            .font-small {
-                font-size: 10pt;
-            }
-            .flex-bottom {
-                margin-top: auto;
-            }
-            .foot-notes {
-                font-family: monospace;
-                color: white;
-                font-weight: bolder;
-                margin-bottom: 8pt;
-            }
-        </style>
-    </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #052146;
+        }
+
+        .main-div {
+            margin: auto;
+            max-width: 1024px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("img/logo_1024.jpeg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            height: calc(95vh - 32pt); /* Adjusted height to prevent overlay */
+            text-align: center;
+        }
+
+        .footer {
+            height: 32pt; /* Reserve space for the footer */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .foot-notes {
+            font-family: monospace;
+            color: white;
+            font-weight: bolder;
+            text-decoration: none;
+            font-size: 16pt;
+        }
+
+        .footer span {
+            font-family: monospace;
+            color: white;
+            margin-top: 8px;
+            font-size: 10pt;
+        }
+    </style>
 </head>
 
-<body class="body-bg">
+<body>
     <div class="main-div">
-        <a href="mailto:info@lychee.technology" class="foot-notes flex-bottom font-big">&#128231;&nbsp;Contact Us</a>
-        <span class="foot-notes font-small">© Lychee Technology Inc. 2025</span>
+        <!-- Background area reserved for the logo -->
+    </div>
+    <div class="footer">
+        <a href="mailto:info@lychee.technology" class="foot-notes">&#128231;&nbsp;Contact Us</a>
+        <span>© Lychee Technology Inc. 2025</span>
     </div>
 </body>
 
