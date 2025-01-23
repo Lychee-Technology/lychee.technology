@@ -15,24 +15,28 @@
                 align-items: center;
                 flex-direction: column;
                 justify-content: center;
+                background-image: url("img/logo_1024.jpeg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 95vh;
             }
-
-            .logo-img {
-                max-width: 100%;
-                height: auto;
-                margin: 8pt;
-            }
-
             .body-bg {
                 background-color: #052146;
             }
-
-            .contact-us {
+            .font-big {
+                font-size: 16pt;
+            }
+            .font-small {
+                font-size: 10pt;
+            }
+            .flex-bottom {
+                margin-top: auto;
+            }
+            .foot-notes {
                 font-family: monospace;
-                margin: 8pt;
                 color: white;
                 font-weight: bolder;
-                font-size: 16pt;
+                margin-bottom: 8pt;
             }
         </style>
     </head>
@@ -40,8 +44,8 @@
 
 <body class="body-bg">
     <div class="main-div">
-        <img class="logo-img" src="img/logo_1024.jpeg">
-        <a href="mailto:info@lychee.technology" class="contact-us">&#128231;&nbsp;Contact Us</a>
+        <a href="mailto:info@lychee.technology" class="foot-notes flex-bottom font-big">&#128231;&nbsp;Contact Us</a>
+        <span class="foot-notes font-small">© Lychee Technology Inc. 2025</span>
     </div>
 </body>
 
