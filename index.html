@@ -55,155 +55,13 @@
     }
     </script>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #052146;
-        }
-
-        .main-div {
-            margin: auto;
-            max-width: 1024px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url("img/logo_1024.jpeg");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            height: calc(95vh - 32pt);
-            /* Adjusted height to prevent overlay */
-            text-align: center;
-        }
-
-        .footer {
-            height: 32pt;
-            /* Reserve space for the footer */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: monospace;
-            color: white;
-        }
-
-        .foot-notes {
-            font-weight: bolder;
-            text-decoration: none;
-            font-size: 16pt;
-            color: white;
-        }
-
-        .footer span {
-            margin-top: 8px;
-            font-size: 10pt;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(5, 33, 70, 0.95);
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 4px;
-        }
-
-        .dropdown-content a {
-            padding: 12px 16px;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .navigation {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(5, 33, 70, 0.9);
-            z-index: 1000;
-        }
-
-        .navigation ul {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 15px 0;
-        }
-
-        .navigation li {
-            margin: 0 20px;
-        }
-
-        .navigation a {
-            color: white;
-            text-decoration: none;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .navigation a:hover {
-            color: #ffa500;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#13ec6d",
-                        "background-light": "#f6f8f7",
-                        "background-dark": "#102218",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            font-size: 24px;
-        }
-
-        .icon-sm {
-            font-size: 20px;
-        }
-
-        .icon-lg {
-            font-size: 32px;
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-white">
@@ -286,7 +144,7 @@
                         </div>
                         <button
                             class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
-
+                            Learn More
                         </button>
                     </div>
                 </div>
@@ -295,21 +153,41 @@
                 <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Partners</h3>
             </div>
             <section class="px-4 py-4">
-                <div class="grid grid-cols-2 gap-6 rounded-lg bg-[#193324] p-6 sm:grid-cols-3">
-                    <div class="flex flex-col items-center justify-center gap-2 text-center">
-                        <img class="h-20 w-auto" data-alt="Mutziker" src="./img/m10b-logo.webp">
-                        <div class="text-white text-sm font-semibold">Mutziker</div>
-                        <div class="text-[#92c9a9] text-xs">Hong Kong</div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-2 text-center">
-                        <img class="h-20 w-20" data-alt="Ginkgo Health" src="./img/ginkgo-logo.webp">
-                        <div class="text-white text-sm font-semibold">Ginkgo Health</div>
-                        <div class="text-[#92c9a9] text-xs">Vancouver, Canada</div>
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-2 text-center">
-                        <img class="h-20 w-20" data-alt="Scudata" src="./img/mstile-150x150.webp">
-                        <div class="text-white text-sm font-semibold">Scudata</div>
-                        <div class="text-[#92c9a9] text-xs">California, US</div>
+                <div class="relative overflow-hidden rounded-lg bg-[#193324] p-6" data-partners-container>
+                    <div class="partners-track" data-partners-track>
+                        <div class="partner-card flex flex-col items-center justify-center gap-2 text-center">
+                            <a href="https://codefuture.ai" target="_blank" rel="noreferrer">
+                                <img class="h-20 w-20" data-alt="codefuture" src="./img/codefuture-logo.webp">
+                            </a>
+                            <div class="text-white text-sm font-semibold">codefuture.ai</div>
+                            <div class="text-[#92c9a9] text-xs">Toronto, Canada</div>
+                        </div>
+                        <div class="partner-card flex flex-col items-center justify-center gap-2 text-center">
+                            <a href="https://www.ginkgo.health/" target="_blank" rel="noreferrer">
+                                <img class="h-20 w-20" data-alt="Ginkgo Health" src="./img/ginkgo-logo.webp">
+                            </a>
+                            <div class="text-white text-sm font-semibold">Ginkgo Health</div>
+                            <div class="text-[#92c9a9] text-xs">Vancouver, Canada</div>
+                        </div>
+                        <div class="partner-card flex flex-col items-center justify-center gap-2 text-center">
+                            <img class="h-20 w-auto" data-alt="Mutziker" src="./img/m10b-logo.webp">
+                            <div class="text-white text-sm font-semibold">Mutziker</div>
+                            <div class="text-[#92c9a9] text-xs">Hong Kong</div>
+                        </div>
+                        <div class="partner-card flex flex-col items-center justify-center gap-2 text-center">
+                            <a href="https://scudata.com/" target="_blank" rel="noreferrer">
+                                <img class="h-20 w-20" data-alt="Scudata" src="./img/mstile-150x150.webp">
+                            </a>
+                            <div class="text-white text-sm font-semibold">Scudata</div>
+                            <div class="text-[#92c9a9] text-xs">California, US</div>
+                        </div>
+                        <div class="partner-card flex flex-col items-center justify-center gap-2 text-center">
+                            <a href="https://skinat.tmall.com" target="_blank" rel="noreferrer">
+                                <img class="h-20 w-20" data-alt="SkinAt" src="./img/skinat.svg">
+                            </a>
+                            <div class="text-white text-sm font-semibold">SkinAt</div>
+                            <div class="text-[#92c9a9] text-xs">Beijing, China</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -354,43 +232,6 @@
             </div>
         </footer>
     </div>
-    <script>
-            (() => {
-                const toggle = document.getElementById('menu-toggle');
-                const panel = document.getElementById('menu-panel');
-                if (!toggle || !panel) return;
-
-                const closeMenu = () => {
-                    panel.classList.add('hidden');
-                    toggle.setAttribute('aria-expanded', 'false');
-                };
-
-                const openMenu = () => {
-                    panel.classList.remove('hidden');
-                    toggle.setAttribute('aria-expanded', 'true');
-                };
-
-                toggle.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    if (panel.classList.contains('hidden')) {
-                        openMenu();
-                    } else {
-                        closeMenu();
-                    }
-                });
-
-                panel.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                });
-
-                document.addEventListener('click', closeMenu);
-                document.addEventListener('keydown', (event) => {
-                    if (event.key === 'Escape') {
-                        closeMenu();
-                    }
-                });
-            })();
-    </script>
 </body>
 
 </html>
