@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #052146;
+    min-height: max(884px, 100dvh);
+}
+
+.main-div {
+    margin: auto;
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("img/logo_1024.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: calc(95vh - 32pt);
+    text-align: center;
+}
+
+.footer {
+    height: 32pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    color: white;
+}
+
+.foot-notes {
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 16pt;
+    color: white;
+}
+
+.footer span {
+    margin-top: 8px;
+    font-size: 10pt;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(5, 33, 70, 0.95);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(5, 33, 70, 0.9);
+    z-index: 1000;
+}
+
+.navigation ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.navigation li {
+    margin: 0 20px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ffa500;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 24px;
+}
+
+.icon-sm {
+    font-size: 20px;
+}
+
+.icon-lg {
+    font-size: 32px;
+}
+
+.partners-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    will-change: transform;
+}
+
+.partner-card {
+    flex: 0 0 240px;
+}
+
+@media (max-width: 640px) {
+    .partner-card {
+        flex-basis: 180px;
+    }
+}
