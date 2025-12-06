@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lychee Technology Inc.</title>
-    <meta name="description" content="Lychee Technology Inc. - Innovative technology solutions including Enigma, Suremate, and Meeting Planner products.">
-    
+    <meta name="description"
+        content="Lychee Technology Inc. - Innovative technology solutions including Enigma, Suremate, and Meeting Planner products.">
+
     <!-- LD-JSON Structured Data -->
     <script type="application/ld+json">
     {
@@ -156,28 +157,240 @@
             color: #ffa500;
         }
     </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec6d",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+
+        .icon-sm {
+            font-size: 20px;
+        }
+
+        .icon-lg {
+            font-size: 32px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
 </head>
 
-<body>
-    <div class="main-div">
-        <nav class="navigation">
-            <ul>
-                <li class="dropdown">
-                    <a href="#products">Products</a>
-                    <div class="dropdown-content">
-                        <a href="https://0bit.uk" target="_blank">Enigma</a>
-                        <a href="https://suremate.app" target="_blank">Suremate</a>
-                        <a href="https://m.0bit.uk" target="_blank">Meeting Planner</a>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-[1280px] flex-col overflow-x-hidden">
+        <header class="sticky top-0 z-50 w-full bg-background-dark/80 backdrop-blur-sm">
+            <div class="flex items-center p-4">
+                <div class="flex size-10 shrink-0 items-center justify-center text-primary">
+                    <img src="img/lt-logo.webp" />
+                </div>
+                <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 ml-2">Lychee Technology
+                </h1>
+                <div class="relative flex items-center justify-end">
+                    <button id="menu-toggle"
+                        class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-transparent text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div id="menu-panel"
+                        class="absolute right-0 top-full mt-2 hidden min-w-[200px] rounded-lg bg-[#193324] shadow-lg ring-1 ring-white/10">
+                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                            href="https://0bit.uk" target="_blank" rel="noreferrer">Enigma</a>
+                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                            href="https://m.0bit.uk" target="_blank" rel="noreferrer">Meeting Planner</a>
                     </div>
-                </li>
-            </ul>
-        </nav>
-        <!-- Background area reserved for the logo -->
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <section class="@container px-4 pt-8 pb-4">
+                <div class="flex min-h-[250px] flex-col gap-6 rounded-lg bg-cover bg-center bg-no-repeat items-start justify-end px-6 pb-8"
+                    data-alt="Abstract vibrant green and dark tech background pattern"
+                    style='background-image: linear-gradient(rgba(16, 34, 24, 0.2) 0%, rgba(16, 34, 24, 0.8) 100%), url("./img/bg.webp");'>
+                    <div class="flex flex-col gap-2 text-left">
+                        <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+                            Innovating the Future with AI
+                        </h2>
+                        <p class="text-white text-base font-normal leading-normal">
+                            Discover our powerful solutions designed to elevate your business.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="px-4 pt-8 pb-2">
+                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Core Products</h3>
+            </div>
+            <div class="p-4 @container">
+                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#193324] overflow-hidden">
+                    <div class="w-full bg-center bg-no-repeat aspect-[32/17] bg-cover"
+                        data-alt="A futuristic user interface showing data analytics for the Suremate product."
+                        style='background-image: url("./img/suremate.webp");background-size: cover; background-position: center; background-repeat: no-repeat;'>
+                    </div>
+                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Suremate</p>
+                            <p class="text-[#92c9a9] text-base font-normal leading-normal">Your intelligent partner for
+                                seamless workflow automation and efficiency. An AI-powered assistant that streamlines
+                                your daily tasks.</p>
+                        </div>
+                        <a href="https://suremate.app" target="_blank" rel="noreferrer">
+                            <button
+                                class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
+                                <span class="truncate">Learn More</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 pt-0 @container">
+                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#193324] overflow-hidden">
+                    <div class="w-full bg-center bg-no-repeat aspect-[32/17] bg-cover"
+                        data-alt="Abstract network of glowing nodes representing the LTBase infrastructure."
+                        style='background-image: url("./img/ltbase.webp");'>
+                    </div>
+                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">LTBase</p>
+                            <p class="text-[#92c9a9] text-base font-normal leading-normal">A robust foundation for
+                                building next-generation AI applications. Flexible, scalable, and powerful API for
+                                developers.</p>
+                        </div>
+                        <button
+                            class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="px-4 pt-8 pb-2">
+                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Partners</h3>
+            </div>
+            <section class="px-4 py-4">
+                <div class="grid grid-cols-2 gap-6 rounded-lg bg-[#193324] p-6 sm:grid-cols-3">
+                    <div class="flex flex-col items-center justify-center gap-2 text-center">
+                        <img class="h-20 w-auto" data-alt="Mutziker" src="./img/m10b-logo.webp">
+                        <div class="text-white text-sm font-semibold">Mutziker</div>
+                        <div class="text-[#92c9a9] text-xs">Hong Kong</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-2 text-center">
+                        <img class="h-20 w-20" data-alt="Ginkgo Health" src="./img/ginkgo-logo.webp">
+                        <div class="text-white text-sm font-semibold">Ginkgo Health</div>
+                        <div class="text-[#92c9a9] text-xs">Vancouver, Canada</div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center gap-2 text-center">
+                        <img class="h-20 w-20" data-alt="Scudata" src="./img/mstile-150x150.webp">
+                        <div class="text-white text-sm font-semibold">Scudata</div>
+                        <div class="text-[#92c9a9] text-xs">California, US</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="mt-12 w-full bg-[#193324] px-4 py-8">
+            <div class="mx-auto flex max-w-7xl flex-col items-center gap-8 text-center">
+                <div class="flex items-center gap-2">
+                    <div class="flex size-10 shrink-0 items-center justify-center text-primary">
+                        <img src="img/lt-logo.webp" />
+                    </div>
+                    <p class="text-lg font-bold">Lychee Technology</p>
+                </div>
+                <p class="text-[#92c9a9]">Empowering businesses with intelligent, scalable, and innovative AI solutions
+                    to drive growth and efficiency in a rapidly evolving digital world.</p>
+                <div class="flex items-center gap-6">
+                    <a aria-label="LinkedIn" class="text-white transition-colors hover:text-primary"
+                        href="https://www.linkedin.com/company/suremate" target="_blank">
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a aria-label="YouTube" class="text-white transition-colors hover:text-primary"
+                        href="https://www.youtube.com/@Suremate_AI" target="_blank">
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 8.818v6.364L15.194 12Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a aria-label="GitHub" class="text-white transition-colors hover:text-primary"
+                        href="https://github.com/Lychee-Technology" target="_blank">
+                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-sm text-[#92c9a9]">© 2025 Lychee Technology. All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
-    <div class="footer">
-        <a href="mailto:info@lychee.technology" class="foot-notes">&#128231;&nbsp;Contact Us</a>
-        <span>© Lychee Technology Inc. 2025</span>
-    </div>
+    <script>
+            (() => {
+                const toggle = document.getElementById('menu-toggle');
+                const panel = document.getElementById('menu-panel');
+                if (!toggle || !panel) return;
+
+                const closeMenu = () => {
+                    panel.classList.add('hidden');
+                    toggle.setAttribute('aria-expanded', 'false');
+                };
+
+                const openMenu = () => {
+                    panel.classList.remove('hidden');
+                    toggle.setAttribute('aria-expanded', 'true');
+                };
+
+                toggle.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    if (panel.classList.contains('hidden')) {
+                        openMenu();
+                    } else {
+                        closeMenu();
+                    }
+                });
+
+                panel.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+
+                document.addEventListener('click', closeMenu);
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        closeMenu();
+                    }
+                });
+            })();
+    </script>
 </body>
 
 </html>
