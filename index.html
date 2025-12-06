@@ -64,7 +64,7 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-white">
-    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-[1280px] flex-col overflow-x-hidden">
+    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-7xl flex-col overflow-x-hidden">
         <header class="sticky top-0 z-50 w-full bg-background-dark/80 backdrop-blur-sm">
             <div class="flex items-center p-4">
                 <div class="flex size-10 shrink-0 items-center justify-center text-primary">
@@ -74,7 +74,7 @@
                 </h1>
                 <div class="relative flex items-center justify-end">
                     <button id="menu-toggle"
-                        class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-transparent text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-transparent text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
                         aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
@@ -108,7 +108,7 @@
             </div>
             <div class="p-4 @container">
                 <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#193324] overflow-hidden">
-                    <div class="w-full bg-center bg-no-repeat aspect-[32/17] bg-cover"
+                    <div class="w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
                         data-alt="A futuristic user interface showing data analytics for the Suremate product."
                         style='background-image: url("./img/suremate.webp");background-size: cover; background-position: center; background-repeat: no-repeat;'>
                     </div>
@@ -131,7 +131,7 @@
             </div>
             <div class="p-4 pt-0 @container">
                 <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#193324] overflow-hidden">
-                    <div class="w-full bg-center bg-no-repeat aspect-[32/17] bg-cover"
+                    <div class="w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
                         data-alt="Abstract network of glowing nodes representing the LTBase infrastructure."
                         style='background-image: url("./img/ltbase.webp");'>
                     </div>
@@ -156,6 +156,14 @@
             <section class="px-4 py-4">
                 <div class="relative overflow-hidden rounded-lg bg-[#193324] p-6" data-partners-container>
                     <div class="partners-track" data-partners-track>
+                        <a class="partner-card" href="https://intnexus.com/" target="_blank" rel="noreferrer">
+                            <div class="flex flex-col items-center justify-center gap-2 text-center">
+                                <img class="h-20 w-20" data-alt="Australia Intelligence Nexus Group"
+                                    src="./img/intnexus-logo.webp">
+                                <div class="text-white text-sm font-semibold">Australia Intelligence Nexus Group</div>
+                                <div class="text-[#92c9a9] text-xs">Sydney, Australia</div>
+                            </div>
+                        </a>
                         <a class="partner-card" href="https://codefuture.ai" target="_blank" rel="noreferrer">
                             <div class="flex flex-col items-center justify-center gap-2 text-center">
                                 <img class="h-20 w-20" data-alt="codefuture" src="./img/codefuture-logo.webp">
@@ -175,14 +183,6 @@
                                 <img class="h-20 w-20" data-alt="Ginkgo Health" src="./img/ginkgo-logo.webp">
                                 <div class="text-white text-sm font-semibold">Ginkgo Health</div>
                                 <div class="text-[#92c9a9] text-xs">Vancouver, Canada</div>
-                            </div>
-                        </a>
-                        <a class="partner-card" href="https://intnexus.com/" target="_blank" rel="noreferrer">
-                            <div class="flex flex-col items-center justify-center gap-2 text-center">
-                                <img class="h-20 w-20" data-alt="Australia Intelligence Nexus Group"
-                                    src="./img/intnexus-logo.webp">
-                                <div class="text-white text-sm font-semibold">Australia Intelligence Nexus Group</div>
-                                <div class="text-[#92c9a9] text-xs">Sydney, Australia</div>
                             </div>
                         </a>
                         <a class="partner-card" href="https://mutziker.com/" target="_blank" rel="noreferrer">
