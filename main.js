@@ -1,56 +1,66 @@
+import scudataLogo from './img/scudata-logo.webp';
+import intnexusLogo from './img/intnexus-logo.webp';
+import enlLogo from './img/enl.webp';
+import ginkgoLogo from './img/ginkgo-logo.webp';
+import m10bLogo from './img/m10b-logo.webp';
+import nanoTagLogo from './img/nanotag.webp';
+import netexLogo from './img/netex-logo.webp';
+import skinAtLogo from './img/skinat.svg';
+import codefutureLogo from './img/codefuture-logo.webp';
+
 (function () {
     const partners = [
         {
             site: "https://intnexus.com/",
-            logoSrc: "./img/intnexus-logo.webp",
+            logoSrc: intnexusLogo,
             name: "Australia Intelligence Nexus Group",
             location: "Sydney, Australia"
         },
         {
             site: "https://2718.ai/",
-            logoSrc: "./img/enl.webp",
+            logoSrc: enlLogo,
             name: "Euler Number Limited",
             location: "Hong Kong, China"
         },
         {
             site: "https://www.ginkgo.health/",
-            logoSrc: "./img/ginkgo-logo.webp",
+            logoSrc: ginkgoLogo,
             name: "Ginkgo Health",
             location: "Vancouver, Canada"
         },
         {
             site: "https://mutziker.com/",
-            logoSrc: "./img/m10b-logo.webp",
+            logoSrc: m10bLogo,
             name: "Mutziker",
             location: "Hong Kong, China"
         },
         {
             site: "https://www.nanotag.com.au/",
-            logoSrc: "./img/nanotag.webp",
+            logoSrc: nanoTagLogo,
             name: "Nanotag Technology",
             location: "Sydney, Australia"
         },
         {
             site: "https://netex.co.jp/",
-            logoSrc: "./img/netex-logo.webp",
+            logoSrc: netexLogo,
             name: "Net Explorer",
             location: "Tokyo, Japan"
         },
         {
             site: "https://scudata.com/",
-            logoSrc: "./img/mstile-150x150.webp",
+            logoSrc: scudataLogo,
             name: "Scudata",
             location: "California, US"
         },
         {
             site: "https://skinat.tmall.com",
-            logoSrc: "./img/skinat.svg",
+            logoSrc: skinAtLogo,
             name: "SkinAt",
             location: "Beijing, China"
         },
         {
             site: "https://codefuture.ai",
-            logoSrc: "./img/codefuture-logo.webp",
+            logoSrc: codefutureLogo,
             name: "Code Future Canada Inc.",
             location: "Toronto, Canada"
         }
@@ -62,10 +72,11 @@
         card.href = site;
         card.target = '_blank';
         card.rel = 'noreferrer';
+        const logoUrl = new URL(logoSrc, import.meta.url).href
         card.innerHTML = `
             <div class="flex flex-col items-center justify-center gap-2 text-center">
                 <img class="h-20 w-auto" data-alt="${name}"
-                    src="${logoSrc}">
+                    src="${logoUrl}">
                 <div class="text-white text-sm font-semibold">${name}</div>
                 <div class="text-[#92c9a9] text-xs">${location}</div>
             </div>`;
