@@ -124,19 +124,34 @@ import codefutureLogo from './img/codefuture-logo.webp';
                 rafId = requestAnimationFrame(tick);
             };
 
+            let animationFrameTimeoutId = 0;
+
             const start = () => {
-                if (rafId) return;
+                if (rafId) {
+                    return;
+                }
+                if (animationFrameTimeoutId) {
+                    clearTimeout(animationFrameTimeoutId);
+                    animationFrameTimeoutId = 0;
+                }
                 rafId = requestAnimationFrame(tick);
             };
 
             const stop = () => {
-                if (!rafId) return;
+                if (!rafId) {
+                     return;
+                }
                 cancelAnimationFrame(rafId);
                 rafId = null;
+                animationFrameTimeoutId = setTimeout(() => {
+                    start();
+                    animationFrameTimeoutId = 0;
+                }, 10000);
             };
 
             container.addEventListener('mouseenter', stop);
             container.addEventListener('mouseleave', start);
+            
             window.addEventListener('blur', stop);
             window.addEventListener('focus', start);
             window.addEventListener('resize', () => {
