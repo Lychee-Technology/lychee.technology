@@ -10,7 +10,7 @@ import * as pdfjsLib from
     pdfjsLib.GlobalWorkerOptions.workerSrc =
         "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.4.149/pdf.worker.min.mjs";
 
-    const pdfDoc = await pdfjsLib.getDocument("/img/LTBase.pdf").promise;
+    const pdfDoc = await pdfjsLib.getDocument("https://raw.githubusercontent.com/Lychee-Technology/lychee.technology/refs/heads/main/img/LTBase.pdf").promise;
     async function renderPage(num) {
         const page = await pdfDoc.getPage(num);
         const viewport = page.getViewport({ scale: 1.5 });
