@@ -134,10 +134,15 @@
             </div>
             <div class="p-4 pt-0 @container">
                 <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#193324] overflow-hidden">
-                    <div class="canvas-container w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
+                    <div id="ltbase-panel"
+                        class="canvas-container relative w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
                         data-alt="Abstract network of glowing nodes representing the LTBase infrastructure."
                         style='background-image: url("./img/ltbase.webp");'>
                         <canvas class="w-full" id="pdfCanvas" style="visibility: hidden;"></canvas>
+                        <div style="visibility: hidden;" class="ltbase-pdf-progress" aria-hidden="true">
+                            <div id="ltbase-pdf-progress-bar"
+                                class="ltbase-pdf-progress__bar ltbase-pdf-progress__bar-animating"></div>
+                        </div>
                     </div>
                     <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
                         <div class="flex flex-col gap-1">

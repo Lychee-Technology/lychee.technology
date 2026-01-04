@@ -124,6 +124,41 @@ body {
     flex: 0 0 240px;
 }
 
+.ltbase-pdf-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    pointer-events: none;
+    border-radius: 9999px;
+}
+
+.ltbase-pdf-progress__bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+    background: linear-gradient(90deg, #92c9a9 0%, #34d399 50%, #16a34a 100%);
+    will-change: transform;
+    pointer-events: none;
+}
+
+.ltbase-pdf-progress__bar-animating {
+    animation: ltbase-pdf-progress-fill 15s linear infinite;
+}
+
+@keyframes ltbase-pdf-progress-fill {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
 @media (max-width: 640px) {
     .partner-card {
         flex-basis: 180px;
