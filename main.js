@@ -7,7 +7,7 @@ import nanoTagLogo from './img/nanotag.webp';
 import netexLogo from './img/netex-logo.webp';
 import skinAtLogo from './img/skinat.svg';
 import codefutureLogo from './img/codefuture-logo.webp';
-import _50northLogo from './img/50north-logo.png';
+import _50northLogo from './img/50north-logo.webp';
 
 (function () {
     const partners = [
