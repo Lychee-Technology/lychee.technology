@@ -1,216 +1,264 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lychee Technology Inc.</title>
+    <title>LTBASE | Secure AI Execution Layer</title>
     <meta name="description"
-        content="Lychee Technology Inc. - Innovative technology solutions including Enigma, Suremate, and Meeting Planner products.">
+        content="LTBASE is a secure execution layer for real business workflows, turning experimental AI into hardened production systems.">
 
-    <!-- LD-JSON Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Lychee Technology Inc.",
+        "@type": "Product",
+        "name": "LTBASE",
         "url": "https://lychee.technology",
-        "logo": "https://lychee.technology/img/logo_1024.jpeg",
-        "description": "Innovative technology solutions provider",
-        "foundingDate": "2025",
-        "email": "info@lychee.technology",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "info@lychee.technology",
-            "contactType": "customer service"
-        },
-        "sameAs": [],
-        "keywords": "Technology, Software, Enigma, Suremate, Meeting Planner, AI, Innovation, Encryption, Productivity",
-        "makesOffer": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Enigma",
-                    "url": "https://0bit.uk"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Suremate",
-                    "url": "https://suremate.app"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Meeting Planner",
-                    "url": "https://m.0bit.uk"
-                }
-            }
-        ]
+        "description": "LTBASE is a secure AI execution layer for enterprise workflows. It validates every model request and response against your business constraints before it reaches production systems.",
+        "brand": { "@type": "Brand", "name": "LTBASE" },
+        "category": "Enterprise AI Infrastructure",
+        "keywords": "AI governance, secure AI, enterprise AI, AI execution layer, semantic firewall, LLM governance"
     }
     </script>
 
     <link rel="stylesheet" href="/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-white">
-    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-7xl flex-col overflow-x-hidden">
-        <header class="sticky top-0 z-50 w-full bg-background-dark/80 backdrop-blur-sm">
-            <div class="flex items-center p-4">
-                <div class="flex size-10 shrink-0 items-center justify-center text-primary">
-                    <img src="img/lt-logo.webp" />
-                </div>
-                <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 ml-2">Lychee Technology
-                </h1>
-                <div class="relative flex items-center justify-end">
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <nav class="bg-surface sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 md:px-12 py-6 max-w-[1280px] mx-auto">
+            <a href="/" class="newsreader-tight text-2xl font-bold tracking-tighter text-on-surface">LTBASE</a>
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-on-surface label-sm border-b-2 border-primary pb-1 transition-all" href="/">Solutions</a>
+                <a class="text-on-surface-variant label-sm hover:text-primary transition-all" href="/#capabilities">Capabilities</a>
+                <a class="text-on-surface-variant label-sm hover:text-primary transition-all" href="/contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/contact.html"
+                    class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 label-sm transition-all duration-150 active:scale-95 hover:bg-primary-fixed">
+                    Book a Demo
+                </a>
+                <div class="relative md:hidden">
                     <button id="menu-toggle"
-                        class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-transparent text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
-                        aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel">
+                        class="flex h-10 w-10 items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"
+                        aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                     <div id="menu-panel"
-                        class="absolute right-0 top-full mt-2 hidden min-w-[200px] rounded-lg bg-[#1c5d36] shadow-lg ring-1 ring-white/10">
-                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-                            href="https://0bit.uk" target="_blank" rel="noreferrer">Enigma</a>
-                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-                            href="https://m.0bit.uk" target="_blank" rel="noreferrer">Meeting Planner</a>
+                        class="absolute right-0 top-full mt-2 hidden min-w-[220px] glass-card ring-1 ring-outline-variant/30">
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors" href="/">Solutions</a>
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors" href="/#capabilities">Capabilities</a>
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors" href="/contact.html">Contact</a>
+                        <a class="block px-6 py-4 label-sm silk-gradient text-on-primary" href="/contact.html">Book a Demo</a>
                     </div>
                 </div>
             </div>
-        </header>
-        <main class="grow">
-            <section class="@container px-4 pt-8 pb-4">
-                <div class="relative min-h-64 overflow-hidden rounded-lg">
-                    <video class="absolute inset-0 h-full w-full object-cover" src="./img/bg.mp4" poster="./img/bg.webp"
-                        autoplay muted loop playsinline aria-hidden="true"></video>
-                    <div class="pointer-events-none absolute inset-0 bg-linear-to-b from-[#10221833] via-[#10221880] to-[#102218cc]"
-                        aria-hidden="true"></div>
-                    <div class="relative flex h-full min-h-64 flex-col gap-6 items-start justify-end px-6 pb-8"
-                        data-alt="Abstract vibrant green and dark tech background pattern">
-                        <div class="flex flex-col gap-2 text-left">
-                            <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">
-                                Innovating the Future with AI
-                            </h2>
-                            <p class="text-white text-base font-normal leading-normal">
-                                Discover our powerful solutions designed to elevate your business.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="px-4 pt-8 pb-2">
-                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Core Products</h3>
-            </div>
-            <div class="p-4 @container">
-                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#1c5d36] overflow-hidden">
-                    <div class="w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
-                        data-alt="A futuristic user interface showing data analytics for the Suremate product."
-                        style='background-image: url("./img/suremate.webp");background-size: cover; background-position: center; background-repeat: no-repeat;'>
-                    </div>
-                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
-                        <div class="flex flex-col gap-1">
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Suremate</p>
-                            <p class="text-[#92c9a9] text-base font-normal leading-normal">
-                                Your AI-Powered Personal Relationship Assistant.
-                            </p>
-                        </div>
-                        <a href="https://suremate.app" target="_blank" rel="noreferrer">
-                            <button
-                                class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
-                                <span class="truncate">Learn More</span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 pt-0 @container">
-                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#1c5d36] overflow-hidden">
-                    <div id="ltbase-panel"
-                        class="canvas-container relative w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
-                        data-alt="Abstract network of glowing nodes representing the LTBase infrastructure."
-                        style='background-image: url("./img/LTBase-BG.webp");'>
-                        <canvas class="w-full" id="pdfCanvas" style="visibility: hidden;"></canvas>
-                        <div style="visibility: hidden;" class="ltbase-pdf-progress" aria-hidden="true">
-                            <div id="ltbase-pdf-progress-bar"
-                                class="ltbase-pdf-progress__bar ltbase-pdf-progress__bar-animating"></div>
-                        </div>
-                    </div>
-                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
-                        <div class="flex flex-col gap-1">
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">LTBase</p>
-                            <p class="text-[#92c9a9] text-base font-normal leading-normal">
-                                A robust foundation for building next-generation AI applications. Flexible, scalable,
-                                and powerful API for developers.
-                            </p>
-                        </div>
-                        <button
-                            class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="px-4 pt-8 pb-2">
-                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Partners</h3>
-            </div>
-            <section class="px-4 py-4">
-                <div class="relative overflow-hidden rounded-lg bg-[#1c5d36] p-6" data-partners-container>
-                    <div class="partners-track" data-partners-track>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="mt-12 w-full px-4 mb-8">
-            <div class="mx-auto py-8 rounded-lg bg-[#1c5d36] flex max-w-7xl flex-col items-center gap-8 text-center">
-                <div class="flex items-center gap-2">
-                    <div class="flex size-10 shrink-0 items-center justify-center text-primary">
-                        <img src="img/lt-logo.webp" />
-                    </div>
-                    <p class="text-lg font-bold">Lychee Technology</p>
-                </div>
-                <p class="text-[#92c9a9]">Empowering businesses with intelligent, scalable, and innovative AI solutions
-                    to drive growth and efficiency in a rapidly evolving digital world.</p>
-                <div class="flex items-center gap-6">
-                    <a aria-label="LinkedIn" class="text-white transition-colors hover:text-primary"
-                        href="https://www.linkedin.com/company/suremate" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z">
-                            </path>
-                        </svg>
+        </div>
+    </nav>
+
+    <main class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <section class="py-32 md:py-48 flex flex-col items-center text-center">
+            <div class="w-full max-w-5xl">
+                <h1 class="newsreader-tight h1-hero text-on-surface mb-12">
+                    Bring AI safely into your business systems
+                </h1>
+                <p class="section-intro text-on-surface-variant mb-16 max-w-2xl mx-auto">
+                    LTBASE provides a secure execution layer for real business workflows, turning experimental AI into hardened production systems.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="/contact.html"
+                        class="silk-gradient text-on-primary px-12 py-5 font-bold transition-all hover:opacity-90 active:scale-95 text-lg">
+                        Book a Demo
                     </a>
-                    <a aria-label="YouTube" class="text-white transition-colors hover:text-primary"
-                        href="https://www.youtube.com/@Suremate_AI" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path clip-rule="evenodd"
-                                d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 8.818v6.364L15.194 12Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                    <a aria-label="GitHub" class="text-white transition-colors hover:text-primary"
-                        href="https://github.com/Lychee-Technology" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path clip-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
+                    <a href="#capabilities"
+                        class="border border-outline-variant/30 text-on-surface px-12 py-5 font-bold transition-all hover:bg-surface-container-low active:scale-95 text-lg">
+                        Explore Capabilities
                     </a>
                 </div>
-                <p class="text-sm text-[#92c9a9]">© 2025-2026 Lychee Technology. All Rights Reserved.</p>
             </div>
-        </footer>
-    </div>
+        </section>
+
+        <section class="py-24 bg-surface-container-low -mx-6 md:-mx-12 px-6 md:px-12">
+            <div class="max-w-[1280px] mx-auto">
+                <h2 class="newsreader-tight h2-title text-on-surface text-center mb-16">
+                    Trusted in real business environments
+                </h2>
+                <div class="overflow-hidden whitespace-nowrap py-12 relative" data-partners-container>
+                    <div class="partners-track" data-partners-track></div>
+                </div>
+                <p class="section-intro font-medium text-on-surface text-center mt-12 tracking-tight max-w-3xl mx-auto">
+                    Partners across North America, Australia, and Asia-Pacific rely on LTBASE to ship AI that their compliance teams approve.
+                </p>
+            </div>
+        </section>
+
+        <section id="capabilities" class="py-40">
+            <h2 class="newsreader-tight h2-title text-center mb-24">From experimental AI to production systems</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+                <div class="bg-surface-container-lowest p-8 md:p-12 relative flex flex-col gap-12 border-l-4 border-primary">
+                    <div class="flex items-center gap-4 md:gap-6">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-highest flex items-center justify-center font-bold text-sm">AI</div>
+                        <div class="flex-grow h-[2px] bg-outline-variant relative">
+                            <div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+                        </div>
+                        <div class="px-4 md:px-6 py-3 md:py-4 border border-error text-error label-sm">No Control</div>
+                        <div class="flex-grow h-[2px] bg-outline-variant relative">
+                            <div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-outline-variant"></div>
+                        </div>
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-highest flex items-center justify-center font-bold text-sm">System</div>
+                    </div>
+                    <div class="flex items-center gap-4 md:gap-6">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-surface-container-highest flex items-center justify-center font-bold text-sm">AI</div>
+                        <div class="flex-grow h-[2px] bg-primary relative">
+                            <div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <div class="px-4 md:px-8 py-3 md:py-4 silk-gradient text-on-primary label-sm">LTBASE</div>
+                        <div class="flex-grow h-[2px] bg-primary relative">
+                            <div class="absolute right-0 -top-1 w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-primary text-on-primary flex items-center justify-center font-bold text-sm">Secure</div>
+                    </div>
+                </div>
+                <div class="space-y-16">
+                    <div class="pl-8 border-l border-outline-variant">
+                        <h3 class="newsreader-tight text-2xl md:text-3xl font-bold mb-4">Standard Integration</h3>
+                        <p class="body-grid-text text-on-surface-variant">
+                            Direct API calls to LLMs create a black-box effect. Your business logic becomes vulnerable to hallucination and prompt injection, with no audit trail when something goes wrong.
+                        </p>
+                    </div>
+                    <div class="pl-8 border-l-4 border-primary">
+                        <h3 class="newsreader-tight text-2xl md:text-3xl font-bold mb-4">LTBASE Execution</h3>
+                        <p class="body-grid-text text-on-surface-variant">
+                            We act as a semantic firewall. Every request and response is validated against your business constraints in real time before reaching core systems, with every decision logged.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-40 bg-surface-container-low -mx-6 md:-mx-12 px-6 md:px-12">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="mb-24 max-w-3xl">
+                    <h2 class="newsreader-tight h2-title text-on-surface mb-8">AI should deliver measurable value</h2>
+                    <p class="text-on-surface-variant section-intro">
+                        Teams using LTBASE report significant efficiency gains without compromising on security posture or data privacy.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 mb-24">
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-4">
+                        <div class="newsreader-tight stat-number tracking-tighter">$5M</div>
+                        <div class="label-sm text-on-surface-variant">Annual productivity gain</div>
+                    </div>
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-4">
+                        <div class="newsreader-tight stat-number tracking-tighter">&lt; 30 days</div>
+                        <div class="label-sm text-on-surface-variant">Payback period</div>
+                    </div>
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-4">
+                        <div class="newsreader-tight stat-number tracking-tighter">30-40%</div>
+                        <div class="label-sm text-on-surface-variant">LLM cost reduction</div>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest p-12 h-80 flex items-end gap-6">
+                    <div class="bg-outline-variant/20 w-full h-1/4"></div>
+                    <div class="bg-outline-variant/40 w-full h-2/4"></div>
+                    <div class="bg-outline-variant/60 w-full h-3/4"></div>
+                    <div class="bg-primary w-full h-full"></div>
+                    <div class="bg-primary-fixed w-full h-5/6"></div>
+                    <div class="bg-outline-variant w-full h-3/6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-40 flex flex-col md:flex-row items-center gap-16 md:gap-24">
+            <div class="w-full md:w-1/2">
+                <h2 class="newsreader-tight h2-title mb-8">The more you use it, the stronger it becomes.</h2>
+                <p class="text-on-surface-variant section-intro mb-12">
+                    LTBASE creates a proprietary data moat for your business. By capturing every interaction within a governed framework, your systems learn the specific nuances of your operational logic — a compounding advantage that generic models cannot replicate.
+                </p>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Governance-first learning
+                    </li>
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Automated system refinement
+                    </li>
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Precision feedback loops
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-12">
+                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full border border-outline-variant flex items-center justify-center animate-spin-slow">
+                    <div class="absolute -top-4 bg-surface-container-lowest border border-outline px-4 py-2 label-sm">AI Usage</div>
+                    <div class="absolute -right-20 bg-surface-container-lowest border border-outline px-4 py-2 label-sm">Governance Data</div>
+                    <div class="absolute -bottom-4 bg-surface-container-lowest border border-outline px-4 py-2 label-sm">System Precision</div>
+                    <div class="absolute -left-20 bg-surface-container-lowest border border-outline px-4 py-2 label-sm">Audit Feedback</div>
+                    <div class="w-32 h-32 rounded-full silk-gradient flex items-center justify-center text-on-primary text-2xl font-bold tracking-wider">MOAT</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 md:py-48 max-w-4xl mx-auto text-left md:text-center">
+            <div class="mb-12 flex md:justify-center">
+                <div class="w-16 h-1 bg-primary"></div>
+            </div>
+            <blockquote class="newsreader-tight text-3xl md:text-5xl leading-tight italic font-medium">
+                &ldquo;Production AI isn&rsquo;t about the model&rsquo;s intelligence — it&rsquo;s about the safety of the environment where that intelligence is applied.&rdquo;
+            </blockquote>
+            <p class="mt-12 label-sm text-on-surface-variant">— LTBASE Engineering</p>
+        </section>
+
+        <section class="mb-32 bg-primary text-on-primary p-12 md:p-32 flex flex-col items-center text-center">
+            <h2 class="newsreader-tight h2-title mb-16">Start building your AI system today</h2>
+            <a href="/contact.html"
+                class="bg-on-primary text-primary px-16 py-6 section-intro font-bold transition-all hover:bg-surface-container-highest active:scale-95">
+                Book a Demo
+            </a>
+            <p class="mt-16 text-on-primary/60 label-sm">Deployment ready in as little as 48 hours. Enterprise-grade SLA included.</p>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-lowest text-on-surface">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-12 py-16 md:py-24 max-w-[1280px] mx-auto gap-12">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="newsreader-tight text-2xl font-bold text-on-surface">LTBASE</div>
+                <div class="label-sm text-on-surface-variant">© 2025-2026 LTBASE. All rights reserved.</div>
+            </div>
+            <div class="flex items-center gap-6">
+                <a aria-label="LinkedIn" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/company/suremate" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                    </svg>
+                </a>
+                <a aria-label="YouTube" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://www.youtube.com/@Suremate_AI" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 8.818v6.364L15.194 12Z" fill-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a aria-label="GitHub" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://github.com/Lychee-Technology" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z" fill-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+                <a class="label-sm text-on-surface-variant hover:text-primary transition-colors" href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="/main.js"></script>
-    <script type="module" src="/ltbase_pdf.js"></script>
 </body>
 
 </html>
