@@ -127,8 +127,13 @@ body {
 }
 
 @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .animate-spin-slow {
@@ -139,7 +144,14 @@ body {
     .partners-track {
         gap: 3rem;
     }
+
     .partner-card img {
         height: 2.25rem;
     }
+}
+
+.hero-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)), url(img/hero-bg.webp);
+    background-size: cover;
+    background-position: center;
 }
