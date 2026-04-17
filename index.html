@@ -1,216 +1,299 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lychee Technology Inc.</title>
+    <title>LTBASE | Secure AI Execution Layer</title>
     <meta name="description"
-        content="Lychee Technology Inc. - Innovative technology solutions including Enigma, Suremate, and Meeting Planner products.">
+        content="LTBASE is a secure execution layer for real business workflows, turning experimental AI into hardened production systems.">
 
-    <!-- LD-JSON Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Lychee Technology Inc.",
-        "url": "https://lychee.technology",
-        "logo": "https://lychee.technology/img/logo_1024.jpeg",
-        "description": "Innovative technology solutions provider",
-        "foundingDate": "2025",
-        "email": "info@lychee.technology",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "info@lychee.technology",
-            "contactType": "customer service"
-        },
-        "sameAs": [],
-        "keywords": "Technology, Software, Enigma, Suremate, Meeting Planner, AI, Innovation, Encryption, Productivity",
-        "makesOffer": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Enigma",
-                    "url": "https://0bit.uk"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Suremate",
-                    "url": "https://suremate.app"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Product",
-                    "name": "Meeting Planner",
-                    "url": "https://m.0bit.uk"
-                }
-            }
-        ]
+        "@type": "Product",
+        "name": "LTBASE",
+        "url": "https://www.lychee.technology",
+        "description": "LTBASE is a secure AI execution layer for enterprise workflows. It validates every model request and response against your business constraints before it reaches production systems.",
+        "brand": { "@type": "Brand", "name": "LTBASE" },
+        "category": "Enterprise AI Infrastructure",
+        "keywords": "AI governance, secure AI, enterprise AI, AI execution layer, semantic firewall, LLM governance"
     }
     </script>
 
     <link rel="stylesheet" href="/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hubot+Sans:wdth,wght@75..125,100..900&family=Figtree:wght@300..900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet">
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-white">
-    <div class="relative mx-auto flex h-auto min-h-screen w-full max-w-7xl flex-col overflow-x-hidden">
-        <header class="sticky top-0 z-50 w-full bg-background-dark/80 backdrop-blur-sm">
-            <div class="flex items-center p-4">
-                <div class="flex size-10 shrink-0 items-center justify-center text-primary">
-                    <img src="img/lt-logo.webp" />
-                </div>
-                <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 ml-2">Lychee Technology
-                </h1>
-                <div class="relative flex items-center justify-end">
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <nav class="bg-surface sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 md:px-12 py-6 max-w-[1280px] mx-auto">
+            <a href="/" class="newsreader-tight text-2xl font-bold tracking-tighter text-on-surface">Lychee Technology
+                Inc.</a>
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-on-surface label-sm border-b-2 border-primary pb-1 transition-all" href="/">Solutions</a>
+                <a class="text-on-surface-variant label-sm hover:text-primary transition-all"
+                    href="/contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="/contact.html"
+                    class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 label-sm transition-all duration-150 active:scale-95 hover:bg-primary-fixed">
+                    Book a Demo
+                </a>
+                <div class="relative md:hidden">
                     <button id="menu-toggle"
-                        class="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-transparent text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary"
-                        aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel">
+                        class="flex h-10 w-10 items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"
+                        aria-haspopup="true" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                     <div id="menu-panel"
-                        class="absolute right-0 top-full mt-2 hidden min-w-[200px] rounded-lg bg-[#1c5d36] shadow-lg ring-1 ring-white/10">
-                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-                            href="https://0bit.uk" target="_blank" rel="noreferrer">Enigma</a>
-                        <a class="block px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
-                            href="https://m.0bit.uk" target="_blank" rel="noreferrer">Meeting Planner</a>
+                        class="absolute right-0 top-full mt-2 hidden min-w-[220px] glass-card ring-1 ring-outline-variant/30">
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                            href="/">Solutions</a>
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                            href="/#capabilities">Capabilities</a>
+                        <a class="block px-6 py-4 label-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                            href="/contact.html">Contact</a>
+                        <a class="block px-6 py-4 label-sm silk-gradient text-on-primary" href="/contact.html">Book a
+                            Demo</a>
                     </div>
                 </div>
             </div>
-        </header>
-        <main class="grow">
-            <section class="@container px-4 pt-8 pb-4">
-                <div class="relative min-h-64 overflow-hidden rounded-lg">
-                    <video class="absolute inset-0 h-full w-full object-cover" src="./img/bg.mp4" poster="./img/bg.webp"
-                        autoplay muted loop playsinline aria-hidden="true"></video>
-                    <div class="pointer-events-none absolute inset-0 bg-linear-to-b from-[#10221833] via-[#10221880] to-[#102218cc]"
-                        aria-hidden="true"></div>
-                    <div class="relative flex h-full min-h-64 flex-col gap-6 items-start justify-end px-6 pb-8"
-                        data-alt="Abstract vibrant green and dark tech background pattern">
-                        <div class="flex flex-col gap-2 text-left">
-                            <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">
-                                Innovating the Future with AI
-                            </h2>
-                            <p class="text-white text-base font-normal leading-normal">
-                                Discover our powerful solutions designed to elevate your business.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="px-4 pt-8 pb-2">
-                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Core Products</h3>
-            </div>
-            <div class="p-4 @container">
-                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#1c5d36] overflow-hidden">
-                    <div class="w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
-                        data-alt="A futuristic user interface showing data analytics for the Suremate product."
-                        style='background-image: url("./img/suremate.webp");background-size: cover; background-position: center; background-repeat: no-repeat;'>
-                    </div>
-                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
-                        <div class="flex flex-col gap-1">
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Suremate</p>
-                            <p class="text-[#92c9a9] text-base font-normal leading-normal">
-                                Your AI-Powered Personal Relationship Assistant.
-                            </p>
-                        </div>
-                        <a href="https://suremate.app" target="_blank" rel="noreferrer">
-                            <button
-                                class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
-                                <span class="truncate">Learn More</span>
-                            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-[1280px] mx-auto px-6 md:px-12">
+        <section class="py-10 md:py-16 flex flex-col items-center text-center">
+            <div class="w-full max-w-5xl"
+                style="background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(img/hero-bg.webp); background-size: cover; background-position: center;">
+                <div class="w-full h-full px-6 md:px-12 py-32 md:py-48 flex flex-col items-center text-center">
+                    <h1 class="newsreader-tight h1-hero text-on-surface mb-12">LTBase</h1>
+                    <h2 class="newsreader-tight h2-title text-on-surface mb-12">
+                        The AI backend your compliance team will actually approve.
+                    </h2>
+                    <p class="section-intro text-on-surface-variant mb-16 max-w-2xl mx-auto">
+                        95% of enterprise AI pilots never reach production. The bottleneck isn't the model — it's the
+                        missing governance layer. LTBase sits between your AI and your business systems: enforcing risk
+                        policies, isolating credentials, logging every action.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a href="/contact.html"
+                            class="silk-gradient text-on-primary px-12 py-5 font-bold transition-all hover:opacity-90 active:scale-95 text-lg">
+                            Book a Demo
+                        </a>
+                        <a href="#capabilities"
+                            class="border border-outline-variant/30 text-on-surface px-12 py-5 font-bold transition-all hover:bg-surface-container-low active:scale-95 text-lg">
+                            Explore Capabilities
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="p-4 pt-0 @container">
-                <div class="flex flex-col items-stretch justify-start rounded-lg bg-[#1c5d36] overflow-hidden">
-                    <div id="ltbase-panel"
-                        class="canvas-container relative w-full bg-center bg-no-repeat aspect-32/17 bg-cover"
-                        data-alt="Abstract network of glowing nodes representing the LTBase infrastructure."
-                        style='background-image: url("./img/LTBase-BG.webp");'>
-                        <canvas class="w-full" id="pdfCanvas" style="visibility: hidden;"></canvas>
-                        <div style="visibility: hidden;" class="ltbase-pdf-progress" aria-hidden="true">
-                            <div id="ltbase-pdf-progress-bar"
-                                class="ltbase-pdf-progress__bar ltbase-pdf-progress__bar-animating"></div>
+        </section>
+
+        <section id="capabilities" class="py-20">
+            <div class="max-w-3xl mb-20">
+                <h2 class="newsreader-tight h2-title mb-8">From AI pilot to governed production system</h2>
+                <p class="section-intro text-on-surface-variant">
+                    LTBase is a Backend-as-a-Service built specifically for enterprise AI. It sits between the AI model
+                    and real business systems, turning raw LLM output into governed, auditable execution. Teams ship
+                    production-grade AI workflows without rebuilding the same safety and compliance infrastructure from
+                    scratch every time.
+                </p>
+            </div>
+
+            <div class="divide-y divide-outline-variant/40 mb-24">
+                <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-16 py-10">
+                    <div>
+                        <div class="label-sm text-on-surface-variant mb-3">01</div>
+                        <div class="newsreader-tight text-xl font-bold leading-snug">Risk-tiered execution governance
                         </div>
                     </div>
-                    <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-4">
-                        <div class="flex flex-col gap-1">
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">LTBase</p>
-                            <p class="text-[#92c9a9] text-base font-normal leading-normal">
-                                A robust foundation for building next-generation AI applications. Flexible, scalable,
-                                and powerful API for developers.
-                            </p>
+                    <p class="body-grid-text text-on-surface-variant self-center max-w-2xl">Every AI action is
+                        automatically classified by risk level. Low-risk actions execute automatically; high-risk
+                        actions pause for human approval, with a full audit trail preserved.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-16 py-10">
+                    <div>
+                        <div class="label-sm text-on-surface-variant mb-3">02</div>
+                        <div class="newsreader-tight text-xl font-bold leading-snug">Knowledge memory with citation
                         </div>
-                        <button
-                            class="flex h-10 min-w-[84px] max-w-full cursor-pointer items-center justify-center self-start overflow-hidden rounded-lg bg-primary px-4 text-sm font-bold leading-normal tracking-[0.015em] text-background-dark">
-                            Learn More
-                        </button>
+                    </div>
+                    <p class="body-grid-text text-on-surface-variant self-center max-w-2xl">AI retrieves answers from
+                        verified enterprise sources — not model weights — targeting ≥95% citation fidelity and &lt;5%
+                        hallucination rates in governed retrieval workflows.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-16 py-10">
+                    <div>
+                        <div class="label-sm text-on-surface-variant mb-3">03</div>
+                        <div class="newsreader-tight text-xl font-bold leading-snug">AI-native system of record</div>
+                    </div>
+                    <p class="body-grid-text text-on-surface-variant self-center max-w-2xl">Business data,
+                        relationships, executable actions, and reusable capabilities live in a single governed runtime —
+                        eliminating the brittle handoffs between metadata catalogs, workflow engines, and application
+                        databases that break most AI deployments.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-16 py-10">
+                    <div>
+                        <div class="label-sm text-on-surface-variant mb-3">04</div>
+                        <div class="newsreader-tight text-xl font-bold leading-snug">Enterprise tool orchestration</div>
+                    </div>
+                    <p class="body-grid-text text-on-surface-variant self-center max-w-2xl">Pre-built connectors for
+                        M365, Salesforce, SAP, ServiceNow, and other core systems. Custom integrations via a declarative
+                        schema.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-16 py-10">
+                    <div>
+                        <div class="label-sm text-on-surface-variant mb-3">05</div>
+                        <div class="newsreader-tight text-xl font-bold leading-snug">Cost governance</div>
+                    </div>
+                    <p class="body-grid-text text-on-surface-variant self-center max-w-2xl">Intelligent model routing,
+                        caching, and budget controls reduce LLM spend by 30–40% before costs sprawl across departments.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-surface-container-low -mx-6 md:-mx-12 px-6 md:px-12">
+            <div class="max-w-[1280px] mx-auto">
+                <div class="mb-12">
+                    <h2 class="newsreader-tight h2-title text-on-surface mb-8">AI should deliver measurable value</h2>
+                    <p class="text-on-surface-variant section-intro">
+                        Teams using LTBase eliminate the backend engineering that blocks most AI deployments from going
+                        live — while cutting LLM spend 30–40% through model routing and caching.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-12">
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-3">
+                        <div class="newsreader-tight stat-number tracking-tighter">$5M</div>
+                        <div class="label-sm text-on-surface-variant">Annual productivity gain</div>
+                    </div>
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-3">
+                        <div class="newsreader-tight stat-number tracking-tighter whitespace-nowrap">&lt;&nbsp;30 days
+                        </div>
+                        <div class="label-sm text-on-surface-variant">Payback period</div>
+                    </div>
+                    <div class="p-10 bg-surface-container-lowest flex flex-col gap-3">
+                        <div class="newsreader-tight stat-number tracking-tighter">30-40%</div>
+                        <div class="label-sm text-on-surface-variant">LLM cost reduction</div>
                     </div>
                 </div>
             </div>
-            <div class="px-4 pt-8 pb-2">
-                <h3 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Our Partners</h3>
+        </section>
+
+        <section class="py-20 flex flex-col md:flex-row items-center gap-16 md:gap-24">
+            <div class="w-full">
+                <h2 class="newsreader-tight h2-title mb-8">The more you use it, the stronger it becomes.</h2>
+                <p class="text-on-surface-variant section-intro mb-12">
+                    Every deployment generates governance data — risk classifications, approval patterns, compliance
+                    maps. This accumulates as a proprietary operational context that continuously improves policy
+                    defaults and deepens system integration. A compounding moat that cloud tooling and open-source
+                    frameworks cannot replicate.
+                </p>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Risk classifications
+                        refine with every deployment
+                    </li>
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Approval and escalation
+                        patterns adapt automatically
+                    </li>
+                    <li class="flex items-center gap-4 body-grid-text font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Reusable business
+                        capabilities compound across teams
+                    </li>
+                </ul>
             </div>
-            <section class="px-4 py-4">
-                <div class="relative overflow-hidden rounded-lg bg-[#1c5d36] p-6" data-partners-container>
-                    <div class="partners-track" data-partners-track>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="mt-12 w-full px-4 mb-8">
-            <div class="mx-auto py-8 rounded-lg bg-[#1c5d36] flex max-w-7xl flex-col items-center gap-8 text-center">
-                <div class="flex items-center gap-2">
-                    <div class="flex size-10 shrink-0 items-center justify-center text-primary">
-                        <img src="img/lt-logo.webp" />
-                    </div>
-                    <p class="text-lg font-bold">Lychee Technology</p>
-                </div>
-                <p class="text-[#92c9a9]">Empowering businesses with intelligent, scalable, and innovative AI solutions
-                    to drive growth and efficiency in a rapidly evolving digital world.</p>
-                <div class="flex items-center gap-6">
-                    <a aria-label="LinkedIn" class="text-white transition-colors hover:text-primary"
-                        href="https://www.linkedin.com/company/suremate" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a aria-label="YouTube" class="text-white transition-colors hover:text-primary"
-                        href="https://www.youtube.com/@Suremate_AI" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path clip-rule="evenodd"
-                                d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 8.818v6.364L15.194 12Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                    <a aria-label="GitHub" class="text-white transition-colors hover:text-primary"
-                        href="https://github.com/Lychee-Technology" target="_blank">
-                        <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path clip-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"
-                                fill-rule="evenodd"></path>
-                        </svg>
-                    </a>
-                </div>
-                <p class="text-sm text-[#92c9a9]">© 2025-2026 Lychee Technology. All Rights Reserved.</p>
+        </section>
+
+        <section class="py-20 md:py-32 max-w-4xl mx-auto text-left md:text-center">
+            <div class="mb-12 flex md:justify-center">
+                <div class="w-16 h-1 bg-primary"></div>
             </div>
-        </footer>
-    </div>
+            <blockquote class="newsreader-tight text-3xl md:text-5xl leading-tight font-light">
+                &ldquo;Production AI isn&rsquo;t about the model&rsquo;s intelligence — it&rsquo;s about the safety of
+                the environment where that intelligence is applied.&rdquo;
+            </blockquote>
+            <p class="mt-12 label-sm text-on-surface-variant">— LTBASE Engineering</p>
+        </section>
+
+        <section class="mb-32 bg-primary text-on-primary p-12 md:p-32 flex flex-col items-center text-center">
+            <h2 class="newsreader-tight h2-title mb-16">From zero to governed AI execution in under 4 hours.</h2>
+            <a href="/contact.html"
+                class="bg-on-primary text-primary px-16 py-6 section-intro font-bold transition-all hover:bg-surface-container-highest active:scale-95">
+                Book a Demo
+            </a>
+            <p class="mt-16 text-on-primary/60 label-sm mb-12">Deployment ready in as little as 48 hours.
+                Enterprise-grade SLA
+                included.</p>
+
+            <h2 class="newsreader-tight h2-title">
+                Trusted by real businesses
+            </h2>
+            <div class="overflow-hidden whitespace-nowrap py-12 mb-6 relative w-full min-w-0" data-partners-container>
+                <div class="partners-track" data-partners-track></div>
+            </div>
+            <p class="newsreader-tight section-intro font-medium text-center mt-12 tracking-tight max-w-3xl mx-auto">
+                Partners across North America, Australia, and Asia-Pacific.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-lowest text-on-surface">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-12 py-16 md:py-24 max-w-[1280px] mx-auto gap-12">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="newsreader-tight text-2xl font-bold text-on-surface">Lychee Technology Inc.</div>
+                <div class="label-sm text-on-surface-variant">© 2025-2026 Lychee Technology Inc. All rights reserved.
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+
+                <a aria-label="LinkedIn" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://www.linkedin.com/company/suremate" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.14-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                    </svg>
+                </a>
+                <a aria-label="YouTube" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://www.youtube.com/@Suremate_AI" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM15.194 12 10 8.818v6.364L15.194 12Z"
+                            fill-rule="evenodd" />
+                    </svg>
+                </a>
+                <a aria-label="GitHub" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://github.com/Lychee-Technology" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"
+                            fill-rule="evenodd" />
+                    </svg>
+                </a>
+                <a aria-label="Blog" class="text-on-surface-variant hover:text-primary transition-colors"
+                    href="https://blog.ltbase.dev" target="_blank" rel="noreferrer">
+                    <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 576 576">
+                        <path
+                            d="M288 88C288 74.7 298.7 64 312 64C457.8 64 576 182.2 576 328C576 341.3 565.3 352 552 352C538.7 352 528 341.3 528 328C528 208.7 431.3 112 312 112C298.7 112 288 101.3 288 88zM144 160C170.5 160 192 181.5 192 208L192 432C192 458.5 213.5 480 240 480C266.5 480 288 458.5 288 432C288 405.5 266.5 384 240 384C231.2 384 224 376.8 224 368L224 304C224 295.2 231.2 288 240 288C319.5 288 384 352.5 384 432C384 511.5 319.5 576 240 576C160.5 576 96 511.5 96 432L96 208C96 181.5 117.5 160 144 160zM312 160C404.8 160 480 235.2 480 328C480 341.3 469.3 352 456 352C442.7 352 432 341.3 432 328C432 261.7 378.3 208 312 208C298.7 208 288 197.3 288 184C288 170.7 298.7 160 312 160z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+                <a class="label-sm text-on-surface-variant hover:text-primary transition-colors"
+                    href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="/main.js"></script>
-    <script type="module" src="/ltbase_pdf.js"></script>
 </body>
 
 </html>
