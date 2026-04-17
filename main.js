@@ -1,7 +1,6 @@
 import scudataLogo from './img/scudata-logo.webp';
 import intnexusLogo from './img/intnexus-logo.webp';
 import enlLogo from './img/enl.webp';
-import ginkgoLogo from './img/ginkgo-logo.webp';
 import m10bLogo from './img/m10b-logo.webp';
 import nanoTagLogo from './img/nanotag.webp';
 import netexLogo from './img/netex-logo.webp';
@@ -12,7 +11,6 @@ import _50northLogo from './img/50north-logo.webp';
 const partners = [
     { site: "https://intnexus.com/", logoSrc: intnexusLogo, name: "Australia Intelligence Nexus Group", location: "Sydney, Australia" },
     { site: "https://2718.ai/", logoSrc: enlLogo, name: "Euler Number Limited", location: "Hong Kong, China" },
-    { site: "https://www.ginkgo.health/", logoSrc: ginkgoLogo, name: "Ginkgo Health", location: "Vancouver, Canada" },
     { site: "https://mutziker.com/", logoSrc: m10bLogo, name: "Mutziker", location: "Hong Kong, China" },
     { site: "https://www.nanotag.com.au/", logoSrc: nanoTagLogo, name: "Nanotag Technology", location: "Sydney, Australia" },
     { site: "https://netex.co.jp/", logoSrc: netexLogo, name: "Net Explorer", location: "Tokyo, Japan" },

@@ -22,8 +22,8 @@
     --color-secondary-container: #d4d4d4;
     --color-error: #ba1a1a;
 
-    --font-headline: "Newsreader", serif;
-    --font-body: "Manrope", sans-serif;
+    --font-headline: "Hubot Sans", sans-serif;
+    --font-body: "Figtree", sans-serif;
 
     --radius-*: initial;
     --radius-full: 9999px;
@@ -40,7 +40,8 @@ body {
 
 .newsreader-tight {
     font-family: var(--font-headline);
-    letter-spacing: -0.02em;
+    font-variation-settings: 'wdth' 87;
+    letter-spacing: -0.03em;
 }
 
 .silk-gradient {
@@ -109,13 +110,13 @@ body {
     justify-content: center;
     gap: 0.5rem;
     text-align: center;
-    opacity: 0.4;
+    opacity: 0.75;
     filter: grayscale(100%);
-    transition: opacity 150ms ease, filter 150ms ease;
+    transition: opacity 200ms ease, filter 200ms ease;
 }
 
 .partner-card:hover {
-    opacity: 0.85;
+    opacity: 1;
     filter: grayscale(0%);
 }
 
