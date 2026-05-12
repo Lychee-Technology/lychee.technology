@@ -14,6 +14,9 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 contact: resolve(__dirname, 'contact.html'),
+                ltbase: resolve(__dirname, 'ltbase/index.html'),
+                ltflow: resolve(__dirname, 'ltflow/index.html'),
+                ltagent: resolve(__dirname, 'ltagent/index.html'),
             },
             output: {
                 entryFileNames: 'assets/[name]-[hash].js',
