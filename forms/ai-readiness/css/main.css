@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --bg: #F9F9F9;
   --bg-2: #F1F1F1;
@@ -171,8 +173,10 @@ body {
   box-shadow: var(--shadow-sm);
   margin-bottom: 14px;
 }
-.card + .card { 
-  
+.newsreader-tight {
+    font-family: var(--font-headline);
+    font-variation-settings: 'wdth' 87;
+    letter-spacing: -0.03em;
 }
 .card .q-num {
   font-family: 'Newsreader', Georgia, serif;
