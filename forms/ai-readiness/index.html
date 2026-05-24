@@ -1,290 +1,334 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>AI Readiness Self-Check</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/main.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI Readiness Self-Check</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
+
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>AI Readiness Self-Check</span>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>AI Readiness Self-Check</span>
+      </div>
+      <div class="progress-pill" id="progressPill">Step <b id="stepNow">1</b> / <b id="stepTotal">5</b></div>
     </div>
-    <div class="progress-pill" id="progressPill">Step <b id="stepNow">1</b> / <b id="stepTotal">5</b></div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
   </div>
-  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-</div>
 
-<main class="shell">
+  <main class="shell">
 
-  <!-- PAGE 1 — INTRO -->
-  <section class="page active" data-page="1">
-    <div class="hero">
-      <span class="eyebrow">A 5-minute self-check</span>
-      <h1>Is your business <em>ready</em> for a small AI pilot?</h1>
-      <p class="lede">
-        This isn't an AI product pitch, and we won't promise to automate your work.
-        Ten short questions help you decide whether to tidy up your workflow first —
-        or start with a small, low-risk AI assist you can actually trust.
-      </p>
+    <!-- PAGE 1 — INTRO -->
+    <section class="page active" data-page="1">
+      <div class="hero">
+        <span class="eyebrow">A 5-minute self-check</span>
+        <h1>Is your business <em>ready</em> for a small AI pilot?</h1>
+        <p class="lede">
+          This isn't an AI product pitch, and we won't promise to automate your work.
+          Ten short questions help you decide whether to tidy up your workflow first —
+          or start with a small, low-risk AI assist you can actually trust.
+        </p>
 
-      <div class="meta-row">
-        <div class="meta"><span class="num">10</span><span class="lab">scored<br/>questions</span></div>
-        <div class="meta"><span class="num">1</span><span class="lab">open<br/>question</span></div>
-        <div class="meta"><span class="num">~5</span><span class="lab">minutes<br/>to finish</span></div>
-        <div class="meta"><span class="num">100</span><span class="lab">point<br/>scale</span></div>
-      </div>
-
-      <ul class="promise">
-        <li>Built for small teams, owner-operators, and local service businesses.</li>
-        <li>No login, no signup wall. Your answers stay in your browser.</li>
-        <li>You'll get a plain-English read on where to start — not a sales pitch.</li>
-      </ul>
-
-      <div class="btn-row">
-        <button class="btn" data-go="2">
-          Begin the self-check
-          <svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="btn ghost" id="resumeBtn" style="display:none;">Resume where I left off</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAGE 2 — BASIC INFO -->
-  <section class="page" data-page="2">
-    <div class="section-head">
-      <div class="kicker">Section 01 — About you</div>
-      <h2>A little context first.</h2>
-      <p>So the result actually reflects your kind of business, not a generic average.</p>
-    </div>
-
-    <div class="card">
-      <div class="field" data-field="industry">
-        <label class="lbl" for="industry">Industry or line of business <span class="req">*</span></label>
-        <select class="select" id="industry">
-          <option value="">Choose one…</option>
-          <option>Education &amp; training</option>
-          <option>Real estate / mortgage &amp; lending</option>
-          <option>Insurance &amp; financial services</option>
-          <option>Accounting &amp; tax</option>
-          <option>Immigration / legal services</option>
-          <option>Beauty, wellness &amp; local services</option>
-          <option>Renovation, repair &amp; home services</option>
-          <option>E-commerce &amp; retail</option>
-          <option>Consulting &amp; professional services</option>
-          <option>Other</option>
-        </select>
-        <div class="err-msg">Please choose your industry.</div>
-      </div>
-
-      <div class="field" data-field="teamSize">
-        <p class="lbl">Team size <span class="req">*</span></p>
-        <div class="chip-row" id="teamSize" data-input="chips" role="group" aria-label="Team size">
-          <button type="button" class="chip" data-value="1 person">1 person</button>
-          <button type="button" class="chip" data-value="2–5 people">2–5 people</button>
-          <button type="button" class="chip" data-value="6–10 people">6–10 people</button>
-          <button type="button" class="chip" data-value="11–20 people">11–20 people</button>
-          <button type="button" class="chip" data-value="More than 20">More than 20</button>
+        <div class="meta-row">
+          <div class="meta"><span class="num">10</span><span class="lab">scored<br />questions</span></div>
+          <div class="meta"><span class="num">1</span><span class="lab">open<br />question</span></div>
+          <div class="meta"><span class="num">~5</span><span class="lab">minutes<br />to finish</span></div>
+          <div class="meta"><span class="num">100</span><span class="lab">point<br />scale</span></div>
         </div>
-        <div class="err-msg">Please pick a team size.</div>
-      </div>
 
-      <div class="field" data-field="businessArea">
-        <p class="lbl">Which part of the business would you most like to improve? <span class="req">*</span></p>
-        <div class="chip-row" id="businessArea" data-input="chips" role="group" aria-label="Business area">
-          <button type="button" class="chip" data-value="Replying to customer inquiries">Replying to customer inquiries</button>
-          <button type="button" class="chip" data-value="Organizing customer records">Organizing customer records</button>
-          <button type="button" class="chip" data-value="Customer follow-up reminders">Follow-up reminders</button>
-          <button type="button" class="chip" data-value="Internal know-how and staff training">Internal know-how &amp; staff training</button>
-          <button type="button" class="chip" data-value="Drafting quotes and proposals">Drafting quotes &amp; proposals</button>
-          <button type="button" class="chip" data-value="Bookings and scheduling">Bookings &amp; scheduling</button>
-          <button type="button" class="chip" data-value="Post-sale follow-up and repeat business">Post-sale &amp; repeat business</button>
-          <button type="button" class="chip" data-value="Not sure yet">Not sure yet</button>
-        </div>
-        <div class="err-msg">Please pick the one closest to your priority.</div>
-      </div>
-    </div>
+        <ul class="promise">
+          <li>Built for small teams, owner-operators, and local service businesses.</li>
+          <li>No login, no signup wall. Your answers stay in your browser.</li>
+          <li>You'll get a plain-English read on where to start — not a sales pitch.</li>
+        </ul>
 
-    <div class="nav-bar">
-      <button class="btn ghost" data-go="1">Back</button>
-      <div class="step-info"><b>Section 1</b> of 4</div>
-      <button class="btn" data-go="3" data-validate="2">
-        Continue
-        <svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-  </section>
-
-  <!-- PAGE 3 — 10 QUESTIONS -->
-  <section class="page" data-page="3">
-    <div class="section-head">
-      <div class="kicker">Section 02 — Ten questions</div>
-      <h2>Be honest. Rough answers are fine.</h2>
-      <p>Each question has three options. Pick whichever is closest — there's no "right" answer.</p>
-    </div>
-
-    <div id="questionList"></div>
-
-    <div class="nav-bar">
-      <button class="btn ghost" data-go="2">Back</button>
-      <div class="step-info"><span id="answeredCount">0</span> of 10 answered</div>
-      <button class="btn" data-go="4" data-validate="3">
-        Continue
-        <svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-  </section>
-
-  <!-- PAGE 4 — OPEN + CONTACT -->
-  <section class="page" data-page="4">
-    <div class="section-head">
-      <div class="kicker">Section 03 — In your own words</div>
-      <h2>If you could only fix one thing first…</h2>
-      <p>One short paragraph is plenty. This is the most useful answer of the whole self-check.</p>
-    </div>
-
-    <div class="card">
-      <div class="field" data-field="openAnswer">
-        <label class="lbl" for="openAnswer">If you could only improve one workflow right now, which one? <span class="hint" style="display:inline; margin-left:6px;">— optional</span></label>
-        <textarea class="textarea" id="openAnswer" maxlength="600"
-          placeholder="e.g. I'd like to spend less time answering the same customer questions every day / I keep forgetting to follow up with leads / I'd like AI to draft replies, but I want to review before sending."></textarea>
-        <div class="err-msg">A sentence or two is fine — please share one workflow.</div>
-      </div>
-    </div>
-
-    <div class="section-head" style="padding-top: 28px;">
-      <div class="kicker">Section 04 — Get your result</div>
-      <h2>Get your AI workflow readiness result.</h2>
-      <p>Leave your email to receive a copy of your result and practical next steps.</p>
-    </div>
-
-    <div class="card">
-      <p style="margin: 0 0 18px; color: var(--ink-2); font-size: 15px; line-height: 1.6;">
-        We'll send you a short summary of your AI workflow readiness result, including your score, result category, and a suggested starting point.
-      </p>
-      <p style="margin: 0 0 22px; color: var(--ink-2); font-size: 15px; line-height: 1.6;">
-        You can also choose whether you'd like to receive occasional LTBase updates or be contacted for a short workflow review.
-      </p>
-
-      <div class="field">
-        <label class="lbl" for="name">Name <span class="hint" style="display:inline; margin-left:6px;">— optional</span></label>
-        <input class="input" id="name" type="text" placeholder="What to call you" autocomplete="name" />
-      </div>
-
-      <div class="field" data-field="email">
-        <label class="lbl" for="email">Email <span class="req">*</span></label>
-        <input class="input" id="email" type="email" placeholder="you@yourbusiness.com" autocomplete="email" />
-        <div class="err-msg">Please enter a valid email address.</div>
-      </div>
-
-      <div class="field">
-        <label class="lbl" for="role">Role / Title <span class="hint" style="display:inline; margin-left:6px;">— optional</span></label>
-        <input class="input" id="role" type="text" placeholder="e.g. Founder, Operations Lead" autocomplete="organization-title" />
-      </div>
-
-      <div class="field">
-        <label class="lbl" for="company">Company <span class="hint" style="display:inline; margin-left:6px;">— optional</span></label>
-        <input class="input" id="company" type="text" placeholder="Your business or studio name" autocomplete="organization" />
-      </div>
-
-      <div class="privacy">
-        We'll only use your information to send your result and relevant LTBase updates. You can unsubscribe anytime.
-      </div>
-    </div>
-
-    <div class="nav-bar">
-      <button class="btn ghost" data-go="3">Back</button>
-      <div class="step-info">Almost done</div>
-      <button class="btn" id="submitBtn" data-validate="4">
-        See my result
-        <svg class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
-  </section>
-
-  <!-- PAGE 5 — RESULT -->
-  <section class="page" data-page="5">
-    <div class="result-hero">
-      <span class="eyebrow">Your self-check</span>
-      <div style="margin: 18px 0 8px;">
-        <span class="score-band" id="scoreBand"><span class="dotc"></span><span id="scoreBandText">Result</span></span>
-      </div>
-      <div class="score-block">
-        <div class="score-num" id="scoreNum">0</div>
-        <div class="score-over">/ 100</div>
-      </div>
-      <h2 class="result-title" id="resultTitle">—</h2>
-      <div class="result-body" id="resultBody"></div>
-
-      <div class="starter-card">
-        <div class="lab">Suggested starting point</div>
-        <div class="flow" id="starterFlow">—</div>
-      </div>
-    </div>
-
-    <div class="section-head" style="padding-top: 28px;">
-      <div class="kicker">Your answers, at a glance</div>
-      <h2>What you told us.</h2>
-    </div>
-
-    <div class="summary-grid" id="summaryGrid"></div>
-
-    <div class="reminder">
-      A high score doesn't mean things are broken; a low score doesn't mean you can't use AI.
-      The number is only here to help you decide: tidy up the workflow first, or start a small pilot.
-    </div>
-
-    <div class="cta-block">
-      <h3>Want a closer look at <em class="serif">your</em> specific workflow?</h3>
-      <p>
-        If you'd like, send over the one workflow you most want to improve. In a short conversation we can sketch:
-      </p>
-      <ul>
-        <li>Whether that workflow is a good fit for AI right now</li>
-        <li>Which step AI could realistically help with</li>
-        <li>Which step still needs a human to confirm</li>
-        <li>Whether a small pilot is worth running</li>
-      </ul>
-      <p style="color: var(--muted); font-size: 14px;">
-        No big system to start. Just the smallest workflow that's likely to land.
-      </p>
-
-      <div class="actions">
-        <button class="btn primary full" id="copyBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 16V6a2 2 0 012-2h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          Copy my result
-        </button>
-        <a href="https://calendly.com/ltbase/30min" target="_blank" rel="noopener">
-          <button class="btn ghost" id="bookBtn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            Book a 30-min intro
+        <div class="btn-row">
+          <button class="btn" data-go="2">
+            Begin the self-check
+            <svg class="arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
-        </a>
-        
-        <button class="btn ghost" id="restartBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 11-2.6-5.9M20 4v4h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Start over
+          <button class="btn ghost" id="resumeBtn" style="display:none;">Resume where I left off</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 — BASIC INFO -->
+    <section class="page" data-page="2">
+      <div class="section-head">
+        <div class="kicker">Section 01 — About you</div>
+        <h2>A little context first.</h2>
+        <p>So the result actually reflects your kind of business, not a generic average.</p>
+      </div>
+
+      <div class="card">
+        <div class="field" data-field="industry">
+          <label class="lbl" for="industry">Industry or line of business <span class="req">*</span></label>
+          <select class="select" id="industry">
+            <option value="">Choose one…</option>
+            <option>Education &amp; training</option>
+            <option>Real estate / mortgage &amp; lending</option>
+            <option>Insurance &amp; financial services</option>
+            <option>Accounting &amp; tax</option>
+            <option>Immigration / legal services</option>
+            <option>Beauty, wellness &amp; local services</option>
+            <option>Renovation, repair &amp; home services</option>
+            <option>E-commerce &amp; retail</option>
+            <option>Consulting &amp; professional services</option>
+            <option>Other</option>
+          </select>
+          <div class="err-msg">Please choose your industry.</div>
+        </div>
+
+        <div class="field" data-field="teamSize">
+          <p class="lbl">Team size <span class="req">*</span></p>
+          <div class="chip-row" id="teamSize" data-input="chips" role="group" aria-label="Team size">
+            <button type="button" class="chip" data-value="1 person">1 person</button>
+            <button type="button" class="chip" data-value="2–5 people">2–5 people</button>
+            <button type="button" class="chip" data-value="6–10 people">6–10 people</button>
+            <button type="button" class="chip" data-value="11–20 people">11–20 people</button>
+            <button type="button" class="chip" data-value="More than 20">More than 20</button>
+          </div>
+          <div class="err-msg">Please pick a team size.</div>
+        </div>
+
+        <div class="field" data-field="businessArea">
+          <p class="lbl">Which part of the business would you most like to improve? <span class="req">*</span></p>
+          <div class="chip-row" id="businessArea" data-input="chips" role="group" aria-label="Business area">
+            <button type="button" class="chip" data-value="Replying to customer inquiries">Replying to customer
+              inquiries</button>
+            <button type="button" class="chip" data-value="Organizing customer records">Organizing customer
+              records</button>
+            <button type="button" class="chip" data-value="Customer follow-up reminders">Follow-up reminders</button>
+            <button type="button" class="chip" data-value="Internal know-how and staff training">Internal know-how &amp;
+              staff training</button>
+            <button type="button" class="chip" data-value="Drafting quotes and proposals">Drafting quotes &amp;
+              proposals</button>
+            <button type="button" class="chip" data-value="Bookings and scheduling">Bookings &amp; scheduling</button>
+            <button type="button" class="chip" data-value="Post-sale follow-up and repeat business">Post-sale &amp;
+              repeat business</button>
+            <button type="button" class="chip" data-value="Not sure yet">Not sure yet</button>
+          </div>
+          <div class="err-msg">Please pick the one closest to your priority.</div>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <button class="btn ghost" data-go="1">Back</button>
+        <div class="step-info"><b>Section 1</b> of 4</div>
+        <button class="btn" data-go="3" data-validate="2">
+          Continue
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
       </div>
-    </div>
+    </section>
 
-    <footer class="foot">
-      <span>AI Readiness Self-Check</span>
-      <span><em>Designed to start small, on purpose.</em></span>
-    </footer>
-  </section>
-</main>
+    <!-- PAGE 3 — 10 QUESTIONS -->
+    <section class="page" data-page="3">
+      <div class="section-head">
+        <div class="kicker">Section 02 — Ten questions</div>
+        <h2>Be honest. Rough answers are fine.</h2>
+        <p>Each question has three options. Pick whichever is closest — there's no "right" answer.</p>
+      </div>
 
-<div class="toast" id="toast">Copied to clipboard</div>
+      <div id="questionList"></div>
 
-<script src="js/main.js"></script>
+      <div class="nav-bar">
+        <button class="btn ghost" data-go="2">Back</button>
+        <div class="step-info"><span id="answeredCount">0</span> of 10 answered</div>
+        <button class="btn" data-go="4" data-validate="3">
+          Continue
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE 4 — OPEN + CONTACT -->
+    <section class="page" data-page="4">
+      <div class="section-head">
+        <div class="kicker">Section 03 — In your own words</div>
+        <h2>If you could only fix one thing first…</h2>
+        <p>One short paragraph is plenty. This is the most useful answer of the whole self-check.</p>
+      </div>
+
+      <div class="card">
+        <div class="field" data-field="openAnswer">
+          <label class="lbl" for="openAnswer">If you could only improve one workflow right now, which one? <span
+              class="hint" style="display:inline; margin-left:6px;">— optional</span></label>
+          <textarea class="textarea" id="openAnswer" maxlength="600"
+            placeholder="e.g. I'd like to spend less time answering the same customer questions every day / I keep forgetting to follow up with leads / I'd like AI to draft replies, but I want to review before sending."></textarea>
+          <div class="err-msg">A sentence or two is fine — please share one workflow.</div>
+        </div>
+      </div>
+
+      <div class="section-head" style="padding-top: 28px;">
+        <div class="kicker">Section 04 — Get your result</div>
+        <h2>Get your AI workflow readiness result.</h2>
+        <p>Leave your email to receive a copy of your result and practical next steps.</p>
+      </div>
+
+      <div class="card">
+        <p style="margin: 0 0 18px; color: var(--ink-2); font-size: 15px; line-height: 1.6;">
+          We'll send you a short summary of your AI workflow readiness result, including your score, result category,
+          and a suggested starting point.
+        </p>
+        <p style="margin: 0 0 22px; color: var(--ink-2); font-size: 15px; line-height: 1.6;">
+          You can also choose whether you'd like to receive occasional LTBase updates or be contacted for a short
+          workflow review.
+        </p>
+
+        <div class="field">
+          <label class="lbl" for="name">Name <span class="hint" style="display:inline; margin-left:6px;">—
+              optional</span></label>
+          <input class="input" id="name" type="text" placeholder="What to call you" autocomplete="name" />
+        </div>
+
+        <div class="field" data-field="email">
+          <label class="lbl" for="email">Email <span class="req">*</span></label>
+          <input class="input" id="email" type="email" placeholder="you@yourbusiness.com" autocomplete="email" />
+          <div class="err-msg">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="role">Role / Title <span class="hint" style="display:inline; margin-left:6px;">—
+              optional</span></label>
+          <input class="input" id="role" type="text" placeholder="e.g. Founder, Operations Lead"
+            autocomplete="organization-title" />
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="company">Company <span class="hint" style="display:inline; margin-left:6px;">—
+              optional</span></label>
+          <input class="input" id="company" type="text" placeholder="Your business or studio name"
+            autocomplete="organization" />
+        </div>
+
+        <div class="privacy">
+          We'll only use your information to send your result and relevant LTBase updates. You can unsubscribe anytime.
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <button class="btn ghost" data-go="3">Back</button>
+        <div class="step-info">Almost done</div>
+        <button class="btn" id="submitBtn" data-validate="4">
+          See my result
+          <svg class="arrow" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE 5 — RESULT -->
+    <section class="page" data-page="5">
+      <div class="result-hero">
+        <span class="eyebrow">Your self-check</span>
+        <div style="margin: 18px 0 8px;">
+          <span class="score-band" id="scoreBand"><span class="dotc"></span><span
+              id="scoreBandText">Result</span></span>
+        </div>
+        <div class="score-block">
+          <div class="score-num" id="scoreNum">0</div>
+          <div class="score-over">/ 100</div>
+        </div>
+        <h2 class="result-title" id="resultTitle">—</h2>
+        <div class="result-body" id="resultBody"></div>
+
+        <div class="starter-card">
+          <div class="lab">Suggested starting point</div>
+          <div class="flow" id="starterFlow">—</div>
+        </div>
+      </div>
+
+      <div class="section-head" style="padding-top: 28px;">
+        <div class="kicker">Your answers, at a glance</div>
+        <h2>What you told us.</h2>
+      </div>
+
+      <div class="summary-grid" id="summaryGrid"></div>
+
+      <div class="reminder">
+        A high score doesn't mean things are broken; a low score doesn't mean you can't use AI.
+        The number is only here to help you decide: tidy up the workflow first, or start a small pilot.
+      </div>
+
+      <div class="cta-block">
+        <h3>Want a closer look at <em class="serif">your</em> specific workflow?</h3>
+        <p>
+          If you'd like, send over the one workflow you most want to improve. In a short conversation we can sketch:
+        </p>
+        <ul>
+          <li>Whether that workflow is a good fit for AI right now</li>
+          <li>Which step AI could realistically help with</li>
+          <li>Which step still needs a human to confirm</li>
+          <li>Whether a small pilot is worth running</li>
+        </ul>
+        <p style="color: var(--muted); font-size: 14px;">
+          No big system to start. Just the smallest workflow that's likely to land.
+        </p>
+
+        <div class="actions">
+          <a class="full" href="https://calendly.com/ltbase/30min" target="_blank" rel="noopener">
+            <button class="btn primary full" id="bookBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8" />
+                <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" />
+              </svg>
+              Book a 30-min intro
+            </button>
+          </a>
+          <button class="btn ghost" id="copyBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8" />
+              <path d="M4 16V6a2 2 0 012-2h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+            Copy my result
+          </button>
+
+
+          <button class="btn ghost" id="restartBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M20 12a8 8 0 11-2.6-5.9M20 4v4h-4" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Start over
+          </button>
+        </div>
+      </div>
+
+      <footer class="foot">
+        <span>AI Readiness Self-Check</span>
+        <span><em>Designed to start small, on purpose.</em></span>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Copied to clipboard</div>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
