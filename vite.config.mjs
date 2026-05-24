@@ -29,6 +29,7 @@ export default defineConfig({
                 ltbase: resolve(__dirname, 'ltbase/index.html'),
                 ltflow: resolve(__dirname, 'ltflow/index.html'),
                 ltagent: resolve(__dirname, 'ltagent/index.html'),
+                'forms-ai-readiness': resolve(__dirname, 'forms/ai-readiness/index.html'),
             },
             output: {
                 entryFileNames: 'assets/[name]-[hash].js',
@@ -39,8 +40,5 @@ export default defineConfig({
     },
     plugins: [
         tailwindcss(),
-        staticCopy([
-            { src: resolve(__dirname, 'forms'), dest: resolve(__dirname, 'dist/forms') },
-        ]),
     ],
 });
