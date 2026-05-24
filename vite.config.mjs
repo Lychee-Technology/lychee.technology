@@ -1,7 +1,19 @@
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { cpSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+
+function staticCopy(entries) {
+    return {
+        name: 'static-copy',
+        closeBundle() {
+            for (const { src, dest } of entries) {
+                cpSync(src, dest, { recursive: true });
+            }
+        },
+    };
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -25,5 +37,10 @@ export default defineConfig({
             },
         },
     },
-    plugins: [tailwindcss()],
+    plugins: [
+        tailwindcss(),
+        staticCopy([
+            { src: resolve(__dirname, 'forms'), dest: resolve(__dirname, 'dist/forms') },
+        ]),
+    ],
 });
