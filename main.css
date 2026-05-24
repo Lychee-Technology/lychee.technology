@@ -155,3 +155,19 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.err-msg {
+    display: none;
+    color: var(--color-error);
+    font-size: 0.8125rem;
+    margin-top: 6px;
+}
+
+.has-error .err-msg {
+    display: block;
+}
+
+.has-error input,
+.has-error textarea {
+    border-color: var(--color-error) !important;
+}
